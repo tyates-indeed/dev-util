@@ -6,4 +6,4 @@ export PS1="\[\e[32m\]\u@\h \[\e[31m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[0
 alias gs='git status'
 alias ga='git add -p'
 alias gl='git log'
-alias gm='git checkout master && git pull'
+alias gm='git checkout $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') && git pull'
